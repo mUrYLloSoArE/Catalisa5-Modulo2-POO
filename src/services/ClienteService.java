@@ -52,8 +52,7 @@ public class ClienteService implements Cadastrar {
         }
 
     }
-
-
+    
         public void cadastrar() {
 
         System.out.println("Digite o seu nome: ");
@@ -104,9 +103,8 @@ public class ClienteService implements Cadastrar {
                     System.out.println(l.getCompra()[i]);
                 }
 
-            } else {
-                System.out.println("CPF não encontrado! ");
             }
+
         }
 
     }

@@ -5,6 +5,7 @@ import model.Vendedor;
 import repository.Cadastrar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class VendedorService implements Cadastrar {
@@ -79,7 +80,6 @@ public class VendedorService implements Cadastrar {
         for (int i = 0; i < valores.length; i++) {
             System.out.println("Valor da " + (i + 1) + "°" + " venda: ");
             valores[i] = sc.nextDouble();
-            total += valores[i];
         }
         vendedor = new Vendedor(nome, cpf, email, valores);
         lista.add(vendedor);
@@ -106,12 +106,11 @@ public class VendedorService implements Cadastrar {
                 System.out.println("Valores: ");
                 for (int i = 0; i < l.getValor().length; i++) {
                     System.out.printf("R$ %.2f \n", l.getValor()[i]);
+                    total = Arrays.stream(l.getValor()).sum();
                 }
-            } else {
-                System.out.println("Email não encontrado! ");
             }
         }
 
-        System.out.printf("Total -> R$ %.2f \n", total);
+        System.out.printf("Total de vendas-> R$ %.2f \n", total);
     }
 }
